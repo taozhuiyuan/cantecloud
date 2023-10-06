@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://zy.ysepan.com/f_zy/ck/xzlb.html?bbh=1173 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>文件下载记录列表</title>
+    <style type="text/css">
+        body { /*background-color: #FFFFE6;*/ font-size: 9pt; padding:0px; border: 0px; margin: 10px;}
+        p { margin: 0px; line-height: 150%; }
+        .sjtb { border: 1px solid #BDB76B; border-collapse: collapse; width: 100%; }
+            .sjtb td { border: 1px solid #BDB76B; font-size: 9pt; }
+            .sjtb tr.trbt { background-color: #EEE8AA; color: #000; }
+        .ad { font-size: 9pt; color: blue; }
+            .ad:hover { COLOR: red; TEXT-DECORATION: none; }
+        .jaml { COLOR: #000000; font-size: 9pt; text-decoration: none }
+        :hover.jaml { color: blue; text-decoration: underline }
+    </style>
+    <script type="text/javascript">
+        document.domain = qdhost();
+        function qdhost() { var x = document.domain.split("."); if (x.length == 1) return document.domain; if (x.length == 3) return x[1] + "." + x[2]; return x[2] + "." + x[3]; }
+
+
+
+        var pdq = 0; var pall = 0;
+
+        function csdy() {
+            if (!parent._kj.qxxzjl && !parent._yh.gly) {
+                alert('管理员已禁止查看下载记录功能！\n\n提示: 管理员在管理区登陆后可以查看下载记录');
+                _zck.gb();
+                return false;
+            }
+            parent._ev.dy("glyzt", "F_" + _zck.id + ".csdy")
+            dqlb(1)
+        };
+        function clfy(rxx) {
+            if (!rxx) { rxx = "0,0,0,0,0,0"; $id("b0").disabled = "true"; } else { $id("b0").disabled = ""; }
+            var a = rxx.split(",");
+            if (a.length != 6) return;
+            $id("jlsm").innerHTML = "共" + a[0] + "条记录,当前第" + a[1] + "页，共" + a[2] + "页";
+
+            pdq = parseInt(a[1]);
+            pall = parseInt(a[2]);
+
+            $id("b1").disabled = (a[3] == "0" ? "true" : "");
+            $id("b2").disabled = (a[4] == "0" ? "true" : "");
+            $id("b3").disabled = (a[5] == "0" ? "true" : "");
+
+        }
+        function fy(r) {
+            var nys = 1;
+            $id("b" + r).disabled = "true";
+            if (r == 1) nys = pdq - 1;
+            if (r == 2) nys = pdq + 1;
+            if (r == 3) nys = pall;
+            //parent.readxml("xsdllb", nys, "", "", "");
+            dqlb(nys)
+
+        }
+        function dqlb(page) {
+            parent._AJ("qt.aspx?cz=xzlb&page=" + page, function (js,r) {
+                clfy(js.z);
+                $id('nr').innerHTML = r;
+            })
+        }
+
+        function dqzl() {
+            $id('jg').innerHTML = '';
+            parent._AJ('qt.aspx?cz=Tjll', function (r) {
+                $id('jg').innerHTML = r;
+            });
+        }
+
+        function $id(rid) { return document.getElementById(rid); }
+        // _CK.kq("jzsm", jzlx, { w: 320, h: 180, v: 1 });
+    </script>
+
+</head>
+<body>
+    <div id="nrq">
+        <div id="nr"><table class="sjtb" border="1" cellspacing="0" cellpadding="2"><tbody><tr class="trbt"><td>下载时间</td><td>下载人IP</td><td>方式</td><td>文件名</td><td>下载量</td><td>下载速度</td><td>用时</td></tr><tr><td>(2小时内)11:20:56</td><td>163.125.205.*</td><td></td><td>2020年9月最新民用航空管制频率表.pdf</td><td align="right">6,820.2 KB</td><td align="right">2072 KB/S</td><td align="right">3 秒</td></tr><tr><td>(2小时内)11:19:01</td><td>163.125.205.*</td><td></td><td>2020年3月最新航空管制频率表.pdf</td><td align="right">1,747.0 KB</td><td align="right">504 KB/S</td><td align="right">4 秒</td></tr><tr><td>2023/10/5 23:18:13</td><td>113.240.192.*</td><td></td><td>QTH定位器.apk</td><td align="right">1,429.2 KB</td><td align="right">-</td><td align="right">0 秒</td></tr><tr><td>2023/10/5 23:17:28</td><td>113.240.192.*</td><td></td><td>Look4Sat_2.0.1.apk</td><td align="right">1,834.1 KB</td><td align="right">1251 KB/S</td><td align="right">2 秒</td></tr><tr><td>2023/10/5 22:42:14</td><td>120.239.157.*</td><td></td><td>FT8CN.apk</td><td align="right">576.0 KB</td><td align="right">8 KB/S</td><td align="right">70 秒</td></tr><tr><td>2023/10/5 22:41:28</td><td>120.239.157.*</td><td>续载</td><td>FT8CN.apk</td><td align="right">1,536.0 KB</td><td align="right">45 KB/S</td><td align="right">34 秒</td></tr><tr><td>2023/10/5 22:41:08</td><td>120.239.157.*</td><td></td><td>FT8CN.apk</td><td align="right">5,643.6 KB</td><td align="right">2092 KB/S</td><td align="right">3 秒</td></tr><tr><td>2023/10/5 22:41:04</td><td>120.239.157.*</td><td></td><td>FT8CN.apk</td><td align="right">4,502.8 KB</td><td align="right">291 KB/S</td><td align="right">16 秒</td></tr><tr><td>2023/10/5 22:41:04</td><td>120.239.157.*</td><td>续载</td><td>FT8CN.apk</td><td align="right">1,024.0 KB</td><td align="right">1563 KB/S</td><td align="right">1 秒</td></tr><tr><td>2023/10/5 22:41:03</td><td>120.239.157.*</td><td>续载</td><td>FT8CN.apk</td><td align="right">.5 KB</td><td align="right">-</td><td align="right">0 秒</td></tr><tr><td>2023/10/5 22:41:01</td><td>120.239.157.*</td><td>续载</td><td>FT8CN.apk</td><td align="right">1,024.0 KB</td><td align="right">133 KB/S</td><td align="right">8 秒</td></tr><tr><td>2023/10/5 22:41:01</td><td>120.239.157.*</td><td>续载</td><td>FT8CN.apk</td><td align="right">2,520.9 KB</td><td align="right">181 KB/S</td><td align="right">14 秒</td></tr><tr><td>2023/10/5 22:40:57</td><td>27.115.124.*</td><td></td><td>FT8CN.apk</td><td align="right">2,993.3 KB</td><td align="right">-</td><td align="right">0 秒</td></tr><tr><td>2023/10/5 22:40:57</td><td>27.115.124.*</td><td>续载</td><td>FT8CN.apk</td><td align="right">2,993.3 KB</td><td align="right">-</td><td align="right">0 秒</td></tr><tr><td>2023/10/5 22:40:57</td><td>27.115.124.*</td><td></td><td>FT8CN.apk</td><td align="right">.6 KB</td><td align="right">-</td><td align="right">0 秒</td></tr></tbody></table></div>
+        <br>
+        <p align="right">
+            <label id="jlsm">共174条记录,当前第1页，共12页</label>&nbsp;
+            <input type="button" id="b0" value="首页" onclick="fy(0);">
+            <input type="button" id="b1" value="上一页" onclick="fy(1);" disabled="">
+            <input type="button" id="b2" value="下一页" onclick="fy(2);">
+            <input type="button" id="b3" value="尾页" onclick="fy(3);">
+
+        </p>
+
+        <div style="text-align:right;margin-top:10px;">
+            <a href="javascript:" onclick="if (parent._yh.gly) { parent._ck.set(&#39;ck/xzll.html&#39;, { w: 420, h: 580 }).open(); } else { alert(&#39;请在管理区登录后执行此操作&#39;); }" class="jaml">[<font color="red">new</font>查看流量详情]</a>
+            <a href="javascript:" onclick="dqzl();" class="jaml">[下载总量统计]</a>
+            <label id="jg"></label>
+            
+
+            <input type="button" value="关闭" onclick="_zck.gb();">
+
+        </div>
+        <ul>
+            <li>小于800K的图片、文本等小文件的下载记录，一分钟内如果产生多条，则下载记录数据会被合并</li>
+            <li>文件下载完成后约需一分钟才会在此显示</li>
+            <li>管理员在空间管理区登陆后可以查看完整ＩＰ地址</li>
+        </ul>
+
+        <p style="text-align:center;"><br><br>空间提供:<a class="ad" href="http://www.ys168.com/" target="_blank">永硕E盘 存储专家</a></p>
+    </div>
+
+</body></html>

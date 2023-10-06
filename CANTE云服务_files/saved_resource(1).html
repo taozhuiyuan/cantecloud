@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://zy.ysepan.com/f_zy/ck/mmrz.html?bbh=1173 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>目录密码认证</title>
+    <style>
+        body {padding: 0;margin: 10px;font-size: 9pt;}
+        p { margin: 0px; line-height: 150%; }
+        .tb { width: 7px; height: 15px; font-size: 0px; float: left; background-color: Red; margin-top: 2px; margin-right: 3px; }
+        .ollb { margin: 1px; padding: 1px; list-style-type: none; margin-left: 10px; padding-left: 10px; line-height: 20px; }
+        .xk {background-color:green; }
+    </style>
+    <script src="./jquery.js.下载"></script>
+    <script type="text/javascript">
+        /// <reference path="../../js/ys168.js" />
+        document.domain = qdhost();
+        function qdhost() { var x = document.domain.split("."); if (x.length == 1) return document.domain; if (x.length == 3) return x[1] + "." + x[2]; return x[2] + "." + x[3]; }
+
+
+        var oml = null; var mlbh = 0; var ggpd = 0;
+        var kjyy = parent.cn;
+        function evjs() {
+            if (parent._ml.dqxz>0 && parent._mlxx.find().kqmm==false) { _zck.gb(); }
+        }
+        function csdy() {
+            fanyi();
+            $("#yz").hide();
+            _zck.dygb = function () { qxxz(); }
+            parent._ev.dy("_ml.dqxz", "F_" + _zck.id + ".evjs")
+            mlbh = _zck.z;
+            qxxz();
+            oml = parent._ml.find(mlbh);
+            if (!oml) { alert("未找到相关目录"); return; }
+            $(oml).addClass("mmrz");
+            var xx = parent._mlxx.find(mlbh);
+            if (xx.sx.substr(0, 1) == 2) {
+                parent.$("#" + _zck.id).css("height", "385px");
+                ggpd = 1;
+                $("#d0").show();
+                parent._AJ("mlrz.aspx?cz=Fhmlqx&mlbh=" + mlbh, function (r) {
+                    var lis = $("#d0 li");
+                    //$(xx.fqqx.split("")).each(function (i, o) { lizt(lis[i], o); });
+                    lizt(lis[0], r.substr(3, 1));
+                    lizt(lis[1], r.substr(5, 1));
+                    lizt(lis[2], r.substr(4, 1));
+                    var li2 = $("#d1 li");
+                    lizt(li2[0], r.substr(2, 1));
+                    lizt(li2[1], r.substr(1, 1));
+                    lizt(li2[2], r.substr(0, 1));
+                });
+
+            } else {
+                $("#d0").hide();
+                ggpd = 0;
+                parent.$("#" + _zck.id).css("height", "265px");
+                var li2 = $("#d1 li");
+                lizt(li2[0], xx.xz);
+                lizt(li2[1], xx.sc);
+                lizt(li2[2], xx.bj);
+            }
+
+
+            $("#pass1").val("").focus();
+            //sxyzm();
+        };
+        //放弃
+        function fq() {
+            parent._AJ("mlrz.aspx?cz=Kqmmfq&mlbh=" + mlbh, function (r) {
+                kqml(mlbh,r);
+            })
+        }
+        //认证打开
+        function rz() {
+            var kqmm = $("#pass1").val();
+            if (kqmm == "" || kqmm.length > 15) {
+                alert("密码不能为空，或不能超过15字符");
+                $("#pass1").val("").focus();
+                return;
+            }
+
+            var yzm = $("#te_yzm").val();
+            if (yzm != "") {
+                var reg = new RegExp("^[0-9a-zA-Z]{4}$");
+                if (reg.test(yzm) == false) { alert('抱歉，验证码不正确，请重新输入'); sxyzm(); $("#te_yzm").focus(); return; }
+            }
+            parent._AJ("mlrz.aspx?cz=Kqmmpd&mlbh=" + mlbh + "&kqmm=" + parent.$bm(kqmm) + "&yzm=" + $("#te_yzm").val(),
+                function (r) {
+                    $id('te_yzm').value = "";
+                    if (r == "0") {
+                        alert("请输入验证码");
+                        if (ggpd == "0") { parent.$("#" + _zck.id).css("height", "315px"); } else { parent.$("#" + _zck.id).css("height", "445px"); }
+                        sxyzm(); $("#te_yzm").focus(); return;
+                    }
+                    if (r == "1") { alert("验证码不正确，请重新输入"); sxyzm(); $("#te_yzm").focus(); return; }
+                    if (r == "2") { alert("目录密码不对，请重新输入"); $("#pass1").val("").focus(); return; }
+                    if (r == "3") { alert("目录密码不对，请重新输入"); sxyzm(); $("#pass1").val("").focus(); return; }
+                    kqml(mlbh, r);
+
+                }, function (r) { alert(r); $("#pass1").val("").focus(); });
+
+
+        };
+        function kqml(rmlbh,r) {
+            var xx = parent._mlxx.find(rmlbh)
+            parent._mlxx.gx(rmlbh, r.sx);
+            if (xx.xzzt != r.xzzt) {
+                xx.xzzt = r.xzzt;
+                xx.gxpd = true;
+            }
+
+            var fx = parent._ml.fx(rmlbh);
+            parent._ml.dj1(fx);
+            _zck.gb();
+
+        }
+
+        function qxxz() {
+            if (oml) { $(oml).removeClass("mmrz"); oml = null; }
+        }
+        function lizt(rli, rzt) {
+            if (rzt == "1") rzt = true;
+            if (rzt == "0") rzt = false;
+            if (rzt) {
+                $(rli).children().eq(0).addClass("xk").next("label").hide();
+            } else {
+                $(rli).children().eq(0).removeClass("xk").next("label").show();
+            }
+        }
+
+        function sxyzm() {
+            $("#yz").show();
+            var yzm_today2 = new Date();
+            var sdz = "<img border='0' style='vertical-align: middle;' src='" + parent._kj.ccym + "/f_ht/sjzx/ys_vf_img.aspx?lx=" + mlbh + "mm&sj=";
+            sdz += yzm_today2 + "' width='130px' height='45px' alt='' />";
+
+            $id("ljtp").innerHTML = sdz;
+            $id('te_yzm').value = "";
+        }
+        function fanyi() {
+            if (kjyy == 0) {
+                parent._ck._szbt(_zck, "Password authentication");
+                $("#d_mm_b2").val("Open directories directly");
+                $("#d_mm_b1").val("Verify password");
+                $("#b0").val("Close");
+                $("#p4").html("Direct open permissions:");
+                $("#p1").html("Privileges after entering a password:");
+                $(".ollb label").html("Prohibit ");
+                $("#yy1").html("View the list of files"); $("#yy2,#yy5").html("Download file"); $("#yy3,#yy6").html("Upload file"); $("#yy4").html("Edit file");
+                $("#bt3").html("Password:");
+                $("#p2").html("Hint:Administrators have all rights");
+                $("#yy_yzm").html("Verification Code");
+            }
+
+        }
+        function $id(id) { return document.getElementById(id);}
+    </script>
+</head>
+<body>
+    <div id="nrq">
+        <div id="d0" style="display: none;">
+            <p style="font-weight:bold;" id="p4">直接打开目录后的权限：</p>
+            <ol class="ollb">
+                <li><div class="tb xk"></div><label id="xxc3">不</label><span id="yy1">可以查看文件列表</span></li>
+                <li><div class="tb"></div><label id="xxc5">不</label><span id="yy2">可以下载文件</span></li>
+                <li><div class="tb"></div><label id="xxc4">不</label><span id="yy3">可以上传文件</span></li>
+            </ol>
+            <p style="text-align:center;margin:10px;">
+                <input type="button" id="d_mm_b2" style="display:inline-block;" value="直接打开目录" onclick="fq();">
+            </p>
+        </div>
+        <div id="d1">
+            <p style="font-weight:bold;" id="p1">输入目录密码后的权限：</p>
+            <ol class="ollb">
+                <li><div class="tb"></div><label style="display: inline;">不</label><span id="yy5">可以下载文件</span></li>
+                <li><div class="tb"></div><label>不</label><span id="yy6">可以上传文件</span></li>
+                <li><div class="tb xk"></div><label style="display: none;">不</label><span id="yy4">可以编辑删除目录内文件</span></li>
+            </ol>
+
+            <hr>
+            <p><label id="bt3">目录密码：</label><input type="password" size="12" id="pass1" class="tx3" onkeypress="if (window.event.keyCode==13){d_mm_b1.click();}"></p>
+            <div id="yz" style="display: none;">
+                <p style="margin-top:5px;margin-left:60px;">
+                    <a href="javascript:;" onclick="sxyzm();" id="ljtp"></a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:;" onclick="sxyzm();"><font color="#1670EB"><u id="yy_sx">刷新</u></font></a>
+                </p>
+                <p style="margin-top:5px;">
+                    <label id="yy_yzm">验 证 码：</label>
+                    <input type="text" size="12" id="te_yzm" onkeypress="if (window.event.keyCode == 13) { $id(&#39;d_mm_b1&#39;).click(); return false; }">
+                </p>
+            </div>
+            
+            <p style="width:100%;margin-top:10px; color:#228B22;padding:1px;text-align:center;border:1px dashed #228B22;line-height:120%;" id="p2">提示:在空间管理区登陆后不受此权限限制。</p>
+            <p style="text-align:center;margin:10px;">
+                <input type="button" id="d_mm_b1" value="验证密码" onclick="rz();">
+                <input type="button" id="b0" value="关闭" onclick="_zck.gb();">
+            </p>
+        </div>
+    </div>
+
+</body></html>

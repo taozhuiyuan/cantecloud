@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://zy.ysepan.com/f_zy/ck/zxlb.html?v=0.1&bbh=1173 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>空间在线列表</title>
+    <style>
+        body { background-color: #FFFFE6; /*background-color:#fff;*/ padding: 0; margin: 0; font-size: 9pt; }
+
+        p { margin: 0px; line-height: 150%; }
+        .sjtb { border: 1px solid #BDB76B; border-collapse: collapse; width: 100%; }
+            .sjtb td { border: 1px solid #BDB76B; font-size: 9pt; }
+            .sjtb tr.trbt { background-color: #EEE8AA; color: #000; }
+        .ad { font-size: 9pt; color: blue; }
+            .ad:hover { COLOR: red; TEXT-DECORATION: none; }  
+
+    </style>
+    <script type="text/javascript">
+        document.domain = qdhost();
+        function qdhost() { var x = document.domain.split("."); if (x.length == 1) return document.domain; if (x.length == 3) return x[1] + "." + x[2]; return x[2] + "." + x[3]; }
+
+        function $id(id) { if (typeof (id) != "string") return id; return document.getElementById(id); }
+        function csdy() {
+            if (!parent._kj.qxzx && !parent._yh.gly) {
+                alert('管理员已禁止查看在线数据功能！\n\n提示: 管理员在管理区登陆后可以查看在线数据');
+                _zck.gb();
+                return false;
+            }
+
+            parent._ev.dy("glyzt", "F_" + _zck.id + ".dq");
+            dq();
+        }
+        function dq() {
+            parent._AJ("qt.aspx?cz=Fhzxlb", function (j, r) {
+                parent._ym.bgsz("#zxrsts", j.zs);
+                $id('nr').innerHTML = r;
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+        <div id="nr"><table class="sjtb" cellspacing="0" cellpadding="2"><tbody><tr class="trbt"><td width="33">编号</td><td>IP值</td><td>进入时间</td><td>停留时间</td></tr><tr><td>1</td><td><font color="blue">117.147.4.*</font></td><td>2023/10/6 11:31:11</td><td align="right">1分钟</td></tr></tbody></table></div>
+        <div style="text-align:center;margin:30px;">
+            <input type="button" value=" 关 闭 " onclick="_zck.gb();">
+            <br>
+            <br>
+            <br>
+            <p>
+                管理员登陆后可查看详细IP
+                <br>空间提供:<a class="ad" href="http://www.ys168.com/" target="_blank">永硕E盘 存储专家</a>
+            </p>
+        </div>
+
+
+</body></html>

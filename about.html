@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CANTE云服务</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+<link href="./css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/carousel.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
+<script src="./js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="./js/bootstrap.js" type="text/javascript"></script>
+<script src="./js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./js/owl.carousel.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function() {
+
+      var owl = $("#owl-demo");
+
+      owl.owlCarousel({
+
+      items :4, //10 items above 1000px browser width
+      itemsDesktop : [1000,4], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
+      itemsTablet: [600,2], //2 items between 600 and 0;
+      itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+      
+      });
+
+      // Custom Navigation Events
+      $(".next").click(function(){
+        owl.trigger('owl.next');
+      })
+      $(".prev").click(function(){
+        owl.trigger('owl.prev');
+      })
+
+    });
+    </script>
+  <script type="text/javascript">
+  // Login Form
+	$(function() {
+	    var button = $('#loginButton');
+	    var box = $('#loginBox');
+	    var form = $('#loginForm');
+	    button.removeAttr('href');
+	    button.mouseup(function(login) {
+	        box.toggle();
+	        button.toggleClass('active');
+	    });
+	    form.mouseup(function() { 
+	        return false;
+	    });
+	    $(this).mouseup(function(login) {
+	        if(!($(login.target).parent('#loginButton').length > 0)) {
+	            button.removeClass('active');
+	            box.hide();
+	        }
+	    });
+	});
+  </script>
+</head>
+<body>
+   <!-- Start Header -->
+       <div class="header">	
+   	 	    <div class="header-top">
+   	 	      <div class="wrap"> 
+   	 	    	 <div class="header-top-left">
+   	 	    	 	<p>B站：https://space.bilibili.com/2006421542</p>
+   	 	    	 </div>
+   				  <div class="header-top-right">
+				        <ul>
+				            <li><a href"#"><i class="fa fa-comments"></i>微信</a></li>
+				            <li  class="login">
+				              <div id="loginContainer">
+				            	   <a href="#" id="loginButton"><span><i class="fa fa-lock"></i>登录</span></a>
+						                <div id="loginBox" class="login-form">    
+						                	<h3>Login into Your Account</h3>            
+						                      <form id="loginForm">
+						                                <span>
+											 	    		<i><img src="./images/user.png" alt="" /></i>
+											 	    		 <input type="text" value="yourname@mail.com" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'yourname@mail.com';}">
+											 	    	</span>
+						                                <span>
+												 	     <i><img src="./images/lock.png" alt="" /></i>
+											 	         <input type="password" value="........." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '.........';}">
+												 	    </span>
+						                               <input type="submit" value="Login">
+						                       </form>
+						                  </div>
+						             </div>
+				               </li>
+				               <li><a href="#" ><i class="fa fa-sign-in"></i>注册</a></li>
+				         </ul>
+				    </div>
+			      <div class="clear"></div>
+			     </div> 
+		      </div>
+             <div class="header-logo-nav">
+             	  <div class="navbar navbar-inverse navbar-static-top nav-bg" role="navigation">
+				      <div class="container">
+				        <div class="navbar-header">
+				          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				            <span class="sr-only">Toggle navigation</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				          </button>
+				         <div class="logo"> <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="" /></a></div>
+				          <div class="clear"></div>
+				        </div>
+				        <div class="collapse navbar-collapse">
+				          <ul class=" menu nav navbar-nav">
+							<li><a href="index.html">主页</a></li>
+				            <li class="active"><a href="#">了解更多</a></li>
+				            <li><a href="404.html">上传到云</a></li>
+				            <li><a href="404.html">本地下载</a></li>
+				          </ul>
+				        </div><!--/.nav-collapse -->
+				      </div>
+				    </div>
+		         <div class="clear"></div>
+	        </div>
+           </div>
+   <!-- End Header -->
+   
+   <!-- Start Main Content -->
+	 <div class="main">	 
+	 	 <div class="wrap">
+	 	 	 <div class="col-lg-12">
+	 	  <div class="about-desc">
+	 		 <h2>关于我们</h2>
+	 	    <p>一个早已确立的事实是，读者在查看其布局时会被页面的可读内容分散注意力。使用Lorem Ipsum的要点是它具有或多或少的字母正态分布，而不是使用“此处的内容，此处的内容”，使其看起来像可读的英语。许多桌面出版软件包和网页编辑器现在使用Lorem Ipsum作为其默认的模型文本，搜索“lorem ipsum”将发现许多仍处于起步阶段的网站。多年来，各种版本不断发展，有时是偶然的，有时是故意的。</p>
+		    <p>Lorem Ipsum只是印刷和排版行业的虚拟文本。自16世纪以来，Lorem Ipsum一直是行业标准的虚拟文本，当时一位不知名的印刷商拿了一个打字机，并把它打乱成打字标本书。它不仅存活了五个世纪，而且还实现了向电子排版的飞跃，基本上保持不变。它在20世纪60年代随着包含Lorem Ipsum段落的Letraset表格的发布而流行起来，最近又随着Aldus PageMaker等桌面出版软件（包括Lorem Ipsum的版本）而普及。</p>
+		    <p></p>
+          </div>
+		  </div> 	   
+		   <div class="list-performance">
+		   	 <div class="row">
+			   <div class="col-lg-6">
+			   	<h2>What We Provide</h2>
+			   	<ul>
+			   		<li><i class="fa fa-check"></i>蓝蓝路</li>
+			   		<li><i class="fa fa-check"></i>只因你太美</li>
+			   		<li><i class="fa fa-check"></i>奥利给</li>
+			   		<li><i class="fa fa-check"></i>鸡汤</li>
+			   		<li><i class="fa fa-check"></i>日内瓦，退钱</li>
+			   		<li><i class="fa fa-check"></i>刚提的新车</li>
+			   	</ul>
+			   </div>
+			    <div class="col-lg-6">
+			     <h2>Performance</h2>
+			     <ul class="progress-bars">
+			     	<li><div class="progress">
+                           <div class="bar" style="width:95%;"></div>
+                        </div>
+                    </li>
+			     	<li><div class="progress">
+                           <div class="bar" style="width:97%;"></div>
+                        </div></li>
+			     	<li><div class="progress">
+                           <div class="bar" style="width:90%;"></div>
+                        </div></li>
+			     	<li><div class="progress">
+                           <div class="bar" style="width:88%;"></div>
+                        </div></li>
+			     </ul>
+			   </div>
+			 </div>
+		   </div>
+		 </div>  
+		 <div class="testimonials-news">
+	      <div class="news partners">
+	      	<div class="wrap">
+	      	  <h2>Our Partners</h2>
+	      	  <div class="row">
+		        <div class="col-lg-3 news-grid">
+		          <img src="./images/clints-img.png" alt="" />
+		          <div class="news-desc">
+		          <h2>Job Position</h2>
+		          <p>Sed quis augue vitae diam condimentum mollis. Quisque bibendum, urna quis ornare accumsan, nisl justo placerat sem [...]</p>
+		          <p><a class="read-more" href="#">Read More</a></p>
+		          </div>
+		        </div><!-- /.col-lg-4 -->
+		        <div class="col-lg-3 news-grid news-grid-middle">
+		        <img src="./images/clints-img.png" alt="" />
+		         <div class="news-desc">
+		          <h2>Job Position</h2>
+		          <p>Sed quis augue vitae diam condimentum mollis. Quisque bibendum, urna quis ornare accumsan, nisl justo placerat sem [...]</p>
+		          <p><a class="read-more" href="#">Read More</a></p>
+		          </div>
+		        </div><!-- /.col-lg-4 -->
+		        <div class="col-lg-3 news-grid">
+		          <img src="./images/clints-img.png" alt="" />
+		         <div class="news-desc">
+		          <h2>Job Position</h2>
+		          <p>Sed quis augue vitae diam condimentum mollis. Quisque bibendum, urna quis ornare accumsan, nisl justo placerat sem [...]</p>
+		          <p><a class="read-more" href="#">Read More</a></p>
+		          </div>
+		        </div><!-- /.col-lg-4 -->
+		      </div>
+	      	 </div>
+	      </div>
+	 </div>
+    </div>
+   <!-- End Main Content -->
+	   
+  <!-- Start Footer -->
+  <span class="footer-arrow"></span>
+       <div class="footer">	  
+       	 <div class="wrap">	      
+		  <div class="row">
+			   <div class="col-lg-6">
+			   	<h2>About Open Cloud</h2>
+			   	<p>Vivamus non elementum enim. Vestibulum fringilla placerat vestibulum. Donec consequat scelerisque lorem, quis laoreet tortor dapibus nec. Duis sodales quis odio quis pretium. Etiam auctor sollicitudin enim. Duis tempus semper sodales. </p>
+			    <ul class="links">
+			    	<li><a href="#">About</a> /</li>
+			    	<li><a href="#">Term of Services</a> /</li>
+			    	<li><a href="#">Press</a> /</li>
+			    	<li><a href="#">Staff</a> /</li>
+			    	<li><a href="#">News</a></li>
+			    </ul> 
+			   </div>
+			    <div class="col-lg-6">
+			     <h2>Products</h2>
+			     <div class="products-list">
+			     <ul>
+			     	<li><a href="#"><i class="fa fa-chevron-right"></i> Private cloud  </a></li>
+			     	<li><a href="#"><i class="fa fa-chevron-right"></i>  DEDICATED SERVER    </a></li>
+			     	<li><a href="#"><i class="fa fa-chevron-right"></i>  Hybrid cloud</a></li>
+			     	<li><a href="#"><i class="fa fa-chevron-right"></i> support </a></li>
+			     </ul>
+			     <ul>	                         
+			       <li><a href="#"><i class="fa fa-chevron-right"></i> dedicated hosting</a></li>
+                   <li><a href="#"><i class="fa fa-chevron-right"></i> email hosting </a></li>
+                   <li><a href="#"><i class="fa fa-chevron-right"></i> solutions</a></li>
+                   <li><a href="#"><i class="fa fa-chevron-right"></i> Knowledge Center</a></li>
+			     </ul>
+			     <div class="clear"></div>
+			    </div>
+			     <div class="subscribe">
+			    	<form>
+			    		<input type="text" placeholder="youremail@domain.com" />
+			    		<input type="submit" value="Subscribe" />
+			    	</form>
+			    </div>
+			   </div>
+			  </div>
+			 </div>
+		   </div>
+			 <div class="footer-bottom">
+			 	<div class="wrap">
+			 	<div class="copy-right">
+			 		<p>open cloud Copyright 2013 all right reserved. Template by  <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+			 	</div>
+			 	<div class="social-icons">
+			 		<ul>
+			 			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+			 			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+			 			<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+			 			<li><a href="#"><i class="fa fa-rss"></i></a></li>
+			 			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+			 		</ul>
+			 	</div>
+			 	<div class="clear"></div>
+			 </div>
+	       </div>
+  <!-- End Footer -->
+  </body>
+</html>
+
+    	
+    	
+            
